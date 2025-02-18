@@ -1,20 +1,17 @@
-public class Bai2 {
-    public static void main(String[] args) {
-        User user1=new User("thienanh","anhlmt26122000@newwave.com","123456");
-        user1.login(user1.getEmail(), user1.getPassword());
-    }
-}
+package user;
+
 //Khai báo class User
-class User{
+public class User{
     private String username;
     private String email;
     private String password;
-
+    private String role;
 
     public User(String username, String email, String password) {
         this.username = username;
         this.email = email;
         this.password = password;
+        this.role = this instanceof Admin ? "ADMIN" : "CUSTOMER";
     }
 
     public String getUsername() {
@@ -49,6 +46,7 @@ class User{
         else System.out.println("Login that bai");
     }
 }
+
 
 
 

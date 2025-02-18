@@ -1,24 +1,12 @@
+package cart;
+
+import product.Product;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class Bai3 {
-    public static void main(String[] args) {
-        Product p1 = new Product("Táo", 12000, "Hoa qua", 10);
-        Product p2 = new Product("Cam", 13000, "Hoa qua", 10);
-        Product p3 = new Product("Nho", 14000, "Hoa qua", 10);
-        Cart cart = new Cart();
-        cart.addProduct(p1, 5);
-        cart.addProduct(p2, 4);
-        cart.addProduct(p2, 4);
-        cart.addProduct(p2, 4);
-        cart.addProduct(p3, 10);
-        cart.showCart();
-    }
-}
-
-class Cart {
+public class Cart {
     Map<Product,Integer> productQuantityMap=new HashMap<>();
     private final List<Product> listProduct=new ArrayList<>();
 
@@ -29,9 +17,9 @@ class Cart {
         for(Product p: listProduct){
             if(p.equals(product)){
                 if(productQuantityMap.get(product)+quantity>p.getStock()){
-                 System.out.println("Số lượng "+product.getName()+" trong kho chỉ còn "+product.getStock()+ ",hay chọn so luong" +
-                           " it hon ");
-                 return;
+                    System.out.println("Số lượng "+product.getName()+" trong kho chỉ còn "+product.getStock()+ ",hay chọn so luong" +
+                            " it hon ");
+                    return;
                 }else{
                     int oldQuantity=productQuantityMap.get(p);
                     productQuantityMap.remove(product);
@@ -72,5 +60,3 @@ class Cart {
         System.out.println("Tổng tiền: " + getTotalPrice() + " VND");
     }
 }
-
-

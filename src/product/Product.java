@@ -1,14 +1,6 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class Bai1 {
-    public static void main(String[] args) {
-            Product p = new Product("Táo",12000,"Hoa qua",10);
-            System.out.println(p.toString());
-        }
-}
+package product;
 
-//Khai báo class product
-class Product{
+public class Product{
     private String name;
     private double price;
     private String category;
@@ -61,5 +53,3 @@ class Product{
                 "Số lượng còn lai trong kho: "+stock;
     }
 }
-
-

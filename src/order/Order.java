@@ -1,20 +1,13 @@
+package order;
+
+import product.Product;
+import user.User;
+
 import java.util.List;
 import java.util.UUID;
 
-public class Bai4 {
-    public static void main(String[] args) {
-        User user1=new User("thienanh","anhlmt26122000@newwave.com","123456");
-        List<Product> productList=List.of(new Product("Nuoc loc",5000,"Nuoc uong",10),new Product("Coca",
-                8000,"Nuoc uong",10));
-        Order order=new Order(user1,productList);
-        order.updateStatus("Đã giao hàng");
-        System.out.println(order.toString());
 
-
-    }
-}
-
-class Order{
+public class Order{
     String order_id;
     User user;
     List<Product> products;
